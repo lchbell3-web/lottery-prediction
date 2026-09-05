@@ -95,6 +95,41 @@
     .pl b{font-size:11.5px;}
     .ph .podd{display:inline;}
     .pnote{font-size:11px;line-height:1.8;}
+    /* ===== 移动端卡片化：竞猜两大表转超紧凑卡片（串关头行 + 腿整行拉宽 + 组合中奖信息合并胶囊） ===== */
+    table.resp{width:100%;box-sizing:border-box;}
+    table.resp tbody,table.resp tr{display:block;width:100%;box-sizing:border-box;}
+    table.resp td{box-sizing:border-box;}
+    table.resp thead{display:none;}
+    table.resp{margin:6px 0 14px;}
+    table.resp tbody tr{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:0 0 9px;border:1px solid #e5eaf1;border-radius:12px;padding:8px 10px;background:#fff;box-shadow:0 1px 6px rgba(16,42,84,.05);}
+    table.resp td{display:inline-flex;align-items:baseline;gap:3px;padding:2px 0;text-align:left;white-space:normal;min-width:0;flex:0 0 auto;width:auto;max-width:fit-content;}
+    table.resp td::before{content:attr(data-label);font-size:10.5px;font-weight:600;color:#94a3b8;margin-right:2px;white-space:nowrap;}
+    table.resp tr:nth-child(even) td{background:transparent;}
+    table.resp tbody tr:hover td{background:transparent;}
+    /* 串关头部：类型+金额 与 综合评分 一行两端 */
+    table.resp td[data-label="串关"]{font-weight:700;font-size:13px;color:#0b2a4a;}
+    table.resp td[data-label="串关"] .small{color:#64748b;font-size:11px;font-weight:400;margin-left:4px;}
+    table.resp td[data-label="综合"]{margin-left:auto;color:#0b2a4a;}
+    /* 腿：整行拉宽（label 行首 + 内容流式铺满） */
+    table.resp td[data-label="腿·对阵"]{flex:1 1 100%;display:block;border-top:1px dashed #edf1f6;margin-top:3px;padding-top:4px;}
+    table.resp td[data-label="腿·对阵"]::before{display:inline-block;margin-right:6px;}
+    table.resp .legs{line-height:1.8;font-size:12.5px;}
+    /* 组合中奖信息：合并成一行胶囊（自动换行） */
+    table.resp td[data-label="组合赔率"],table.resp td[data-label="中奖概率"],table.resp td[data-label="平均信心"],table.resp td[data-label="期望回报"],table.resp td[data-label="价值"],table.resp td[data-label="理论中奖"]{background:#f3f7fc;border-radius:6px;padding:1px 7px;font-size:12px;}
+    /* 逐场：对阵/玩法预测/信心爆冷 整行紧凑 */
+    table.resp td[data-label="对阵"],table.resp td[data-label="玩法预测"],table.resp td[data-label="信心/爆冷"]{flex:1 1 100%;display:block;border-top:1px dashed #edf1f6;margin-top:3px;padding-top:4px;}
+    table.resp td[data-label="对阵"]::before,table.resp td[data-label="玩法预测"]::before,table.resp td[data-label="信心/爆冷"]::before{display:inline-block;margin-right:6px;}
+    table.resp td[data-label="联赛"]{font-size:12px;color:#57606f;margin-left:8px;}
+    table.resp td[data-label="玩法预测"] .plays{justify-content:flex-start;line-height:1.7;gap:3px 6px;}
+    table.resp td.ud{white-space:normal;}
+    table.resp td.ud .ud-wrap{display:block;margin-top:3px;max-width:100%;}
+    /* 多角度分析：独立浅色信息块整行 */
+    table.resp td[data-label="多角度分析"]{flex:1 1 100%;background:#f6f9fd;border:1px solid #e8eef6;border-radius:8px;padding:7px 10px;font-size:11px;line-height:1.7;color:#374151;margin-top:3px;}
+    table.resp td[data-label="多角度分析"]::before{display:inline-block;margin-right:6px;}
+    /* 单关逐场"投注"栏：手机上删除 */
+    table.resp td[data-label="投注"]{display:none;}
+
+
   }
 
   .wrap{max-width:1120px;margin:0 auto;padding:24px 20px 60px;}
